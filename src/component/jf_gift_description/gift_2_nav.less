@@ -1,0 +1,139 @@
+
+.gift_details{
+  min-height: calc(100vh);
+}
+/*礼品详情*/
+.gift_details_nav{
+  box-sizing: border-box;
+  position: sticky!important;
+  background:#fff;
+  width: 100%;
+  height: 42px;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  .details_nav_content{
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    div{
+
+      float: left;
+      width: 50%;
+      padding: 10px 0;
+      box-sizing: border-box;
+      text-align: center;
+/*      &:first-child{
+        &:before{
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          border-left: 1px solid #ddd;
+          color: #ddd;
+          transform: scaleY(0.5);
+        }
+      }*/
+      &.selected{
+        position: relative;
+        color: #10a6e2;
+        &:after{
+          content:'';
+          position: absolute;
+          bottom: 0;
+          left:calc(~'(50vw - 50%) / 2');
+          width: 50%;
+          border-bottom: 2px solid #10a6e2;
+          z-index: 2;
+
+        }
+      }
+    }
+    &:after{
+      content: '';
+      display: block;
+      clear: both;
+      height: 0;
+
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      box-sizing: border-box;
+      width: 100%;
+      height: 1px;
+      color: #ddd;
+      z-index: 1;
+      border-bottom: 1px solid #ddd;
+      transform-origin: 0 0;
+      transform: scaleY(0.6);
+    }
+    &.fixed_nav{
+      position: fixed;
+      top:0;
+      z-index: 1000;
+    }
+  }
+  .details_nav_box{
+    position: relative;
+    width: 100%;
+    top: -84px;
+    left: 0;
+    height: 42px;
+    background: transparent;
+  }
+
+}
+
+.gift_details_images{
+
+  .gift_details_title{
+    position: relative;
+    padding:10px 0 8px 0;
+    text-align: center;
+    color: #ababab;
+    font-size: 14px;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 30%;
+      width: 6%;
+      border: 1px solid #ababab;
+      color: #ababab;
+      transform-origin: 0;
+      transform: scaleY(0.2);
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 30%;
+      width: 6%;
+      border: 1px solid #ababab;
+      color: #ababab;
+      transform-origin: 0;
+      transform: scaleY(0.2);
+    }
+
+  }
+
+  .details_images_content{
+
+    width: 100%;
+    img{
+      vertical-align: bottom;
+      width: 100%;
+      border: 0;
+      padding: 0;
+      margin: 0
+    }
+  }
+
+}
+

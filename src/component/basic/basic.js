@@ -119,13 +119,43 @@ var windowBanEvent = {
 
 };
 
-
 //增加active事件
 document.addEventListener('touchstart', function () {
 }, false);
 
 
+//domeA 可以
+function domeA(ele){
 
+    ele.getElementsByClassName('arrow')[0].innerHTML = '胖';
+
+}
+
+//可以
+function domeC(ele){
+
+    ele.getElementsByTagName('span')[0].addEventListener('click',function () {
+
+        alert('胖')
+    })
+
+}
+
+
+function domeB(ele){
+
+    ele.querySelect('.arrow')[0].innerHTML = '胖';
+
+}
+
+function domeD(ele){
+
+    ele.querySelect('.arrow')[0].addEventListener('click',function () {
+
+        alert('胖')
+    })
+
+}
 
 
 

@@ -1,0 +1,101 @@
+
+  .gift_meal_choice {
+
+    font-weight: bold;
+    padding: 15px 0 5px 15px;
+    color: #fa4143;
+
+
+    select.left_gift_festival {
+
+      height: 35px;
+      border-radius: 3px;
+      width: 35%;
+      padding-left: 20px;
+      font-size: 15px;
+      border: 1px solid #DDDDDD;
+    }
+
+    select.right_gift_number {
+      height: 35px;
+      border-radius: 3px;
+      margin-left: 19px;
+      padding-left: 20px;
+      width: 56%;
+      font-size: 15px;
+      border: 1px solid #DDDDDD;
+    }
+  }
+
+  .hot_goods_list {
+    margin: 10px;
+
+    a.product {
+      display: inline-block;
+      width: 49%;
+      float: left;
+      border-radius: 10px;
+      background-color: #fff;
+      margin-top: 5px;
+      box-sizing: border-box;
+      padding: 0 8px 10px 8px;
+      box-shadow: 1px 2px 2px #E9E9E9;
+      margin-bottom: 3px;
+
+      &:active{
+        opacity: .8;
+        background-color: #e4e4e4;
+      }
+      .product_main_img {
+        position: relative;
+        width: 100%;
+        height: calc(~'100vw / 375 * 167');
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 5px;
+
+        img{
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .product_main_title {
+        position: relative;
+        font-size: 14px;
+        height: 38px;
+        line-height: 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        color: #4a4a4a;
+        margin-bottom: 8px;
+
+      }
+      .gift_number {
+        color: #ff4646;
+        font-size: 14px;
+        white-space: nowrap;
+        padding:2px 5px;
+        border: 1px solid #ff4646;
+        border-radius: 5px;
+
+      }
+      &:nth-child(2n){
+        margin-left: 3px;
+      }
+      &:nth-child(2n+1){
+        margin-right: 3px;
+      }
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+      visibility: hidden;
+    }
+  }

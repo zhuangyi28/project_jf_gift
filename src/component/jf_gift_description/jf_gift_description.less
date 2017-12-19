@@ -1,0 +1,61 @@
+.top_box{
+  position: fixed;
+  bottom: 100px;
+  right:0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #ffffff;
+  color: #4a4a4a;
+  z-index: 9999;
+  opacity: 1;
+  transform: translate3d(120px,0,0);
+  transition: transform .3s;
+  img{
+    width: 24px;
+    height: 24px;
+    margin: 8px auto 0;
+    display: flex;
+    align-items: center;
+  }
+  p{
+    text-align: center;
+    font-size: 14px;
+    color: #ababab;
+
+  }
+  &.show{
+     transform: translate3d(-20px,0,0);
+     opacity: 1;
+  }
+}
+
+
+footer.gift_redeem_now{
+
+  z-index: 999;
+
+
+  .gift_redeem_bottom{
+      position: fixed;
+      z-index: 999;
+      bottom: 0;
+      left: 0;
+      height: 55px;
+      width: 100%;
+      background-color: #10a6e1;
+      align-items: center;
+      font-size: 18px;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 1px;
+      line-height: 55px;
+
+    &:active{
+      background-color: #10b4e1;
+color: rgba(255,255,255,.8)
+    }
+
+  }
+}
