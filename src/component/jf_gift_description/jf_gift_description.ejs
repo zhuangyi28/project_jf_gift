@@ -1,0 +1,37 @@
+<!-- 礼品详情页 -->
+
+<%- include('./gift_1_autoplay.ejs')%>
+
+<%- include('./gift_2_nav.ejs')%>
+
+<%- include('./gift_3_parameter.ejs')%>
+
+<%- include('./gift_4_sevice.ejs')%>
+
+
+
+
+<!-- 置顶 -->
+<div class="top_box">
+    <img src="../../images/arrow.png">
+    <p>顶部</p>
+</div>
+
+
+
+<!-- 底部按钮-->
+
+<footer class="gift_redeem_now"><a class="gift_redeem_bottom" href="../jf_gift_exchange/gift_order_confirm.html">立即兑换</a></footer>
+
+<script>
+
+    //点击按钮到达顶部
+    document.getElementsByClassName('top_box')[0].addEventListener('click',function () {
+
+        giftDetails.scrollMove(document.getElementsByClassName('product_autoPlay')[0].offsetTop,300)
+
+    },false)
+
+
+
+</script>
