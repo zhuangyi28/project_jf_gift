@@ -1,0 +1,120 @@
+.jf_gift_2_logistics {
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: white;
+  padding: 10px 10px 10px 100px;
+  line-height: 50px;
+
+  .jf_gift_2_caption {
+    margin-left: -80px;
+    padding-bottom: 10px;
+
+  }
+
+
+  .logistics_step_sequence {
+
+    font-size: 12px;
+    position: relative;
+    line-height: 16px;
+    margin-bottom: 20px;
+
+
+    &.model {
+
+      .step_sequence_title {
+        font-size: 14px;
+        color: #10a6e2;
+
+        &:before {
+          background-color: #10a6e2;
+          z-index: 4;
+        }
+
+      }
+
+      .step_sequence_time {
+        color: #10a6e2;
+      }
+
+    }
+
+    &:last-child:before{
+      content: '';
+      height: 0;
+
+    }
+
+    &:before {
+      content: '';
+      width: 1px;
+      height: 150%;
+      display: block;
+      background: #ddd;
+      position: absolute;
+      left: -21px;
+      top: 10px;
+
+    }
+
+    .step_sequence_time {
+      .gift_date{
+        font-size: 16px;
+      }
+      margin-left: -80px;
+      color: #ababab;
+      text-align: right;
+      float: left;
+      margin-top: 3px;
+
+
+    }
+
+    .step_sequence_title {
+
+      position: relative;
+      margin-right: 15px;
+      line-height: 24px;
+      font-size: 14px;
+      color: #ababab;
+
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: -24px;
+        top: 8px;
+        display: block;
+        width: 6px;
+        height: 6px;
+        background: #bbb;
+        border-radius: 50%;
+
+      }
+    }
+
+  }
+
+}
+
+.gift_logistics_tip {
+  z-index: 500;
+  position: relative;
+  left: 0;
+  padding: 5px 10px;
+  font-size: 12px;
+  background-color: #f5e2c7;
+  color: #fc6329;
+  width: 100%;
+  height: 30px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  img{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    line-height: 30px;
+  }
+}

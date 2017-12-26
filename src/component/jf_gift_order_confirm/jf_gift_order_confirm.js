@@ -3,15 +3,15 @@
  */
 var orderConfirm = {
 
-    clickViewMore:function () {
+    clickViewMore:function (thisClickEle) {
 
-            var thisEle = document.getElementsByClassName('left_gift_list')[0];
+            var thisEle = thisClickEle;
 
             var showELe = document.getElementsByClassName('gift_subdivision_goods')[0];
 
             if(showELe.className.indexOf('view_more')> -1) {
 
-                showELe.className = 'gift_subdivision_goods'
+                showELe.className = 'gift_subdivision_goods';
 
                 thisEle.getElementsByTagName('span')[0].innerHTML = '显示细分商品';
 
@@ -21,7 +21,7 @@ var orderConfirm = {
 
             else {
 
-                showELe.className += ' view_more'
+                showELe.className += ' view_more';
 
                 thisEle.getElementsByTagName('span')[0].innerHTML = '点击收起';
 

@@ -1,0 +1,217 @@
+/*登录号码*/
+.gift_load_phone {
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  box-shadow: 0 2px 3px #e9e9e9;
+
+  p {
+    padding: 15px;
+  }
+}
+
+.gift_account_content{
+  position: relative;
+  width: 100%;
+  height: 508px;
+  height: calc(~'100vh - 159px');
+  overflow: hidden;
+}
+/*礼品套餐档位*/
+.gift_details_content {
+  background-color: #fff;
+  box-shadow: 0 2px 3px #e9e9e9;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  transform: translate3d(-100%, 0, 0);
+  transition: transform .3s .2s;
+
+  .gift_prompt_goods{
+    z-index: 500;
+    position: relative;
+    left: 0;
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: #f5e2c7;
+    color: #fc6329;
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+      line-height: 30px;
+    }
+  }
+
+  .packages_details_tab {
+    position: relative;
+    font-size: 14px;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    color: #8a8a8a;
+    padding: 10px 15px;
+    .tab {
+      width: 60%;
+      padding-left: 16px;
+      &.right {
+        width: 40%;
+      }
+    }
+    /*已过期*/
+    .expired{
+      text-align: right;
+      padding-right: 16px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+      box-sizing: border-box;
+      width: 92%;
+      height: 1px;
+      color: #ddd;
+      transform-origin: 0 0;
+      transform: scaleY(.6);
+      border-bottom: 1px solid #ddd;
+
+    }
+  }
+
+  .packages_title_2018{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    position: relative;
+    .gift_details_2018{
+       width: 60%;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+.expire_name{
+  color: #ababab;
+}
+    p{
+      line-height: 20px;
+      word-wrap: normal;
+    }
+
+    p.gift_time{
+      color: #bbb;
+      font-size: 13px;
+      &.expire_time{
+        color: #ddd;
+      }
+    }
+
+    }
+
+.gift_number_2018{
+  width: 10%;
+  text-align: center;
+  &.expire_num{
+    color: #ababab;
+  }
+}
+
+    .gift_a_present{
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 16%;
+      p{
+        width: 50px;
+        height: 22px;
+        border: 1px solid #10a6e1;
+        border-radius: 5px;
+        text-align: center;
+        color: #10a6e1;
+
+        &:active{
+          opacity: .6;
+        }
+      }
+    }
+
+    .jf_gift_question{
+      img{
+        vertical-align: middle;
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      color: #ddd;
+      transform-origin: 0 0;
+      transform: scaleY(.6);
+      border-bottom: 1px solid #ddd;
+    }
+    &:last-child:after{
+      content: '';
+      position: absolute;
+      top: 0;
+      border-bottom: none;
+    }
+  }
+  &.show{
+    transform: translate3d(0, 0, 0);
+  }
+  &.show ~ .gift_details_content{
+    transform: translate3d(100%,0,0);
+  }
+
+  }
+
+/*已兑换&已转赠*/
+.gift_look_details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 24%;
+  p{
+    width: 80px;
+    height: 22px;
+    border: 1px solid #10a6e1;
+    border-radius: 5px;
+    text-align: center;
+    color: #10a6e1;
+
+    &:active{
+      opacity: .6;
+    }
+  }
+  img{
+    padding-left: 10px;
+    width: 18px;
+    height: 18px;
+  }
+
+
+}
+

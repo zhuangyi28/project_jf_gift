@@ -1,0 +1,22 @@
+
+<div class="gift_address_content">
+    <!--添加地址-->
+    <%- include('gift_add_address/gift_add_address.ejs')%>
+
+    <!-- 弹框-->
+    <%- include('gift_add_address/prompt_address.ejs')%>
+
+    <!--保存按钮-->
+    <footer class="gift_redeem_now" onclick="giftShowTip.loadingShow({
+    'text' : '加载中'
+    })">
+
+        <a class="gift_redeem_bottom ">
+            保存
+        </a>
+
+    </footer>
+
+
+
+</div>

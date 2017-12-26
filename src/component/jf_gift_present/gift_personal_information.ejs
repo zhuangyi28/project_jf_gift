@@ -1,0 +1,55 @@
+
+<!--礼品册信息-->
+
+<div class="gift_book_information">
+
+    <div class="gift_information_title">礼品册信息</div>
+
+    <div class="text_list">
+        <p>礼品册分类</p>
+        <p class="gift_right">春节礼品册</p>
+    </div>
+    <div class="text_list">
+        <p>价格档位</p>
+        <p class="gift_right">价值￥300.00</p>
+    </div>
+    <div class="text_list">
+        <p>拥有数量</p>
+        <p class="gift_right">2</p>
+    </div>
+
+    <div class="text_list">
+        <p>有效期至</p>
+        <p class="gift_right">2018 - 02 - 12</p>
+    </div>
+</div>
+
+
+<div class="gift_present_information">
+
+    <label class="login_name">
+        <span>手机号</span>
+        <input placeholder="获赠人手机号" class="gift_present_number" type="text" pattern="[0-9]*" maxlength="11">
+    </label>
+
+    <label class="login_name">
+        <span></span>
+        <input placeholder="再次输入手机号" class="gift_present_number" type="text" pattern="[0-9]*" maxlength="11">
+    </label>
+
+    <label class="login_name">
+        <span>姓名</span>
+        <input placeholder="您的姓名（用于通知获赠者是谁送的）" class="gift_present_number" type="text">
+    </label>
+
+    <label class="login_name">
+        <span>赠送数量</span>
+
+        <div class="gift_volume_btn" onclick="giftAccount.volumeBtn(document.getElementsByClassName('gift_volume_btn')[0])">
+            <span class="reduce">－</span>
+            <input type="number" pattern="[0-9]*" class="gift_volume_input" value="1" disabled>
+            <span class="add">＋</span>
+        </div>
+    </label>
+
+</div>
