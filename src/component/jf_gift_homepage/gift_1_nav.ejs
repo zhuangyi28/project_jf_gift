@@ -1,37 +1,13 @@
 <div class="top_nav">
     <div class="tab_box"></div>
     <div class="tab_content">
-        <div class="nav_sort">
+        <div class="nav_sort" onclick="homePagePrompt.sortTabShow(document.getElementsByClassName('nav_sort')[0])">
             <span>春节礼品册2018</span>
             <div class="arrow">▼</div>
         </div>
-        <div class="nav_details">
+        <div class="nav_details" onclick="homePagePrompt.detailsTabShow(document.getElementsByClassName('nav_details')[0])">
             <span>我的礼品册：<i>￥12300.00×3份</i></span>
             <div class="arrow">▼</div>
         </div>
     </div>
 </div>
-
-<script>
-
-
-    //礼品册选择实例化弹框
-    sortListShow = new jfDropDown({
-
-        ele:'sortList',
-
-        scrollClassname:'jf_drop_down_content'
-
-    })
-
-    //礼品册选择实例化弹框
-    detailsListShow = new jfDropDown({
-
-        ele:'detailsList',
-
-        scrollClassname:'jf_drop_down_content'
-
-    })
-
-
-</script>

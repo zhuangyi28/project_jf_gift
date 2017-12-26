@@ -1,0 +1,52 @@
+
+<div class="gift_input_form">
+    <p>收货人</p>
+    <p><input class="jf_gift_input" type="text" placeholder="请输入姓名" value="庄中煲"></p>
+</div>
+
+<div class="gift_input_form">
+    <p>联系电话</p>
+    <p><input class="jf_gift_input" type="number" pattern="[0-9]*" placeholder="请输入联系电话" value="15628917729"></p>
+</div>
+
+<div class="gift_input_form">
+    <p>所在地区</p>
+    <p class="gift_input_center" onclick="giftAddress.addressPopShow(document.getElementById('gift_address_box'),function() {
+
+     addressChoose.run({
+
+     //ip地址
+     yourUrl:'http://jd-test.jia-fu.cn',
+
+     type: 'get',
+
+     targetDom:document.getElementById('address_show'),
+
+     //初始化id
+     startId:['1','72','2799'],
+
+     //初始化name
+     startName:['北京', '朝阳区', '三环以内'],
+
+     fn:function() {
+
+       giftAddress.addressPopHide(document.getElementById('gift_address_box'))
+       //城市名称数组
+       console.log(addressChoose.addressCity)
+       //城市id数组
+       console.log(addressChoose.addressCityId)
+     }
+
+     })
+
+    })">
+        <span id="address_show">上海，徐汇区，城区</span>
+        <span><img src="../../images/gift_product_go.png"></span>
+    </p>
+</div>
+
+<div class="gift_input_form">
+    <p>详细地址</p>
+    <p><textarea class="jf_gift_textarea" placeholder="请输入详细地址" rows="4">上海市徐汇区虹桥路808号加华商务中心D5栋三楼嘉福弹性福利平台</textarea></p>
+</div>
+

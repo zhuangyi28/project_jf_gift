@@ -9,12 +9,20 @@
     text-align: center;
     color: #ababab;
     font-size: 14px;
+    img{
+      width: 18px;
+      height: 18px;
+      vertical-align: sub;
+      margin-right: 5px;
+    }
+
     &:before{
       content: '';
       position: absolute;
       top: 50%;
       left: 30%;
       width: 6%;
+      height: 1px;
       border: 1px solid #ababab;
       color: #ababab;
       transform-origin: 0;
@@ -26,6 +34,7 @@
       top:50%;
       right: 30%;
       width: 6%;
+      height: 1px;
       border: 1px solid #ababab;
       color: #ababab;
       transform-origin: 0;
@@ -58,10 +67,15 @@
       }
       td{
         padding: 10px;
-
         span{
-          position: absolute;
-          right: 25px;
+          display: inline-block;
+          &:first-child{
+            width:calc(~'100% - 60px') ;
+          }
+          &+span{
+            width: 40px;
+            text-align: right;
+          }
         }
 
       }
@@ -78,13 +92,20 @@
     color: #ababab;
     font-size: 14px;
     margin-top: 10px;
+    img{
+      width: 18px;
+      height: 18px;
+      vertical-align: sub;
+      margin-right: 5px;
+    }
 
     &:before{
       content: '';
       position: absolute;
       top: 30%;
-      left: 24%;
+      left: 22%;
       width: 6%;
+      height: 1px;
       border: 1px solid #ababab;
       color: #ababab;
       transform-origin: 0;
@@ -95,8 +116,9 @@
       content: '';
       position: absolute;
       top: 30%;
-      right: 24%;
+      right: 22%;
       width: 6%;
+      height: 1px;
       border: 1px solid #ababab;
       color: #ababab;
       transform-origin: 0;
@@ -109,8 +131,7 @@
   .gift_customer_service{
 
     background: #fff;
-    padding: 15px 10px 15px 0;
-    text-align: center;
+    padding: 15px;
     box-shadow: 1px 1px 1px #E9E9E9;
     margin-bottom: 55px;
     .gift_service_title1{
@@ -119,8 +140,8 @@
     }
 
     .gift_service_title2{
-      padding-bottom: 10px;
       color: #4a4a4a;
+      margin-bottom: 15px;
 
     }
     .gift_service_title3{

@@ -1,0 +1,148 @@
+
+
+/*礼品册信息*/
+.gift_book_information{
+  background-color: #fff;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 3px #e9e9e9;
+
+  .gift_information_title{
+
+    text-align: center;
+    position: relative;
+    padding: 10px 0;
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+      box-sizing: border-box;
+      width: 92%;
+      height: 1px;
+      color: #ddd;
+      border-bottom: 1px solid #ddd;
+      transform-origin: 0 0;
+      transform: scaleY(.6);
+    }
+  }
+
+  .text_list{
+
+    padding: 10px 15px;
+    color: #8a8a8a;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+
+    p:first-child{
+      width: 60%;
+    }
+    p+p{
+      width: calc(~'100% - 100px');
+      text-align: right;
+      color: #4a4a4a;
+    }
+
+  }
+
+}
+
+
+
+.gift_present_information{
+
+  background-color: #fff;
+  width: 100%;
+
+  box-sizing: border-box;
+  label.login_name{
+    display: flex;
+    vertical-align: middle;
+    padding: 15px 15px;
+    position: relative;
+    box-sizing: border-box;
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+      box-sizing: border-box;
+      width: 92%;
+      height: 1px;
+      color: #ddd;
+      border-bottom: 1px solid #ddd;
+      transform-origin: 0 0;
+      transform: scaleY(.6);
+    }
+    &:last-child:after{
+      content: '';
+      position: absolute;
+      top: 0;
+      border-bottom: none;
+    }
+
+    span{
+      width: 100px;
+      vertical-align: middle;
+      color:#8a8a8a;
+    }
+    input.gift_present_number{
+
+      width: 80%;
+      font-size: 14px;
+      border: 0;
+      outline: none;
+      border-radius: 0;
+      color: #4a4a4a;
+      transition: all 0.3s linear;
+      vertical-align: middle;
+      &::-webkit-input-placeholder{
+        color: #ddd;
+      }
+
+    }
+    .gift_volume_btn{
+      position: relative;
+      width: 80%;
+      .reduce{
+        color: #8a8a8a;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #c9c9c9;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .add{
+        color: #8a8a8a;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #c9c9c9;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .gift_volume_input{
+        border: 0;
+        width: 30px;
+        text-align: center;
+        color: #4a4a4a;
+      }
+    }
+  }
+  input:disabled, input[disabled]{
+    color: #4a4a4a;
+    -webkit-text-fill-color:#4a4a4a;
+    opacity: 1;
+  }
+
+
+}

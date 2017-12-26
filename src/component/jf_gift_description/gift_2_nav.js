@@ -3,27 +3,23 @@
  */
 var giftDetails = {
 
+
+
     //点击tab滚动条滑动到指定位置
-    changeTab:function() {
+    changeTab: function (thisTab, e) {
 
+        var thisEle = thisTab.getElementsByClassName('product_details');
 
-    var thisTab =  document.getElementsByClassName('details_nav_content')[0];
+        var evt = e || window.event;
 
-    var thisEle = thisTab.getElementsByClassName('product_details');
+        var thisTargetEle = evt.srcElement || evt.target;
 
-
-    thisTab.addEventListener('click',function (e) {
-
-        var evt = e||window.event;
-
-        var thisTargetEle = evt.srcElement||evt.target;
-
-
-        for(var i=0;i<thisEle.length;i++){
+        for (var i = 0; i < thisEle.length; i++) {
 
             //如果是点击元素 移动到对应位置
 
-            if(thisEle[i] == thisTargetEle){
+            if (thisEle[i] == thisTargetEle) {
+
 
                 giftDetails.scrollMove(document.getElementById('description_box').getElementsByClassName('gift_details')[i].offsetTop - 42 + 5, 300)
 
@@ -31,33 +27,18 @@ var giftDetails = {
 
         }
 
-    },false)
 
-},
+    },
 
+    //滚动条滑动到指定位置 tab变化
+    scrollChangeDetails: function (thisEleBox) {
 
+            //滚动切换
+            var thisScrollTop = thisEleBox.scrollTop;
 
-    srcollChangeDetails:function(){
+            var thisDocumentHeight = thisEleBox.scrollHeight;//获取当前文档的高度 2242
 
-        //滚动切换
-        window.addEventListener('scroll',function () {
-
-
-
-            var thisScrollTop;
-
-            if(browser.os.android || browser.os.iOS){
-
-                thisScrollTop = document.body.scrollTop;//网页被卷去的高
-            }
-            else {
-
-                thisScrollTop = document.documentElement.scrollTop;//网页被卷去的高
-            }
-
-            var thisDocumentHeight = document.body.scrollHeight;//获取当前文档的高度 2242
-
-            var thisWindowHeight = document.body.offsetHeight;//屏幕可视窗口高度 667
+            var thisWindowHeight = thisEleBox.offsetHeight;//屏幕可视窗口高度 667
 
             var navContent = document.getElementsByClassName('details_nav_content')[0];//导航盒子
 
@@ -66,7 +47,6 @@ var giftDetails = {
             var thisEleTop1 = document.getElementsByClassName('gift_details_images')[0].getBoundingClientRect().top;//1元素到页面高度
 
             var thisEleTop2 = document.getElementsByClassName('gift_specification_details')[0].getBoundingClientRect().top; //2元素到页面高度
-
 
             //固定tab 仅限安卓
             giftDetails.slidePositionTab();
@@ -119,7 +99,7 @@ var giftDetails = {
             function showTopBox() {
 
 
-                if(Math.abs(parseFloat(thisDocumentHeight) - parseFloat(thisScrollTop + thisWindowHeight)) <= 300){
+                if (Math.abs(parseFloat(thisDocumentHeight) - parseFloat(thisScrollTop + thisWindowHeight)) >= 300) {
 
                     //console.log('出现')
                     document.getElementsByClassName('top_box')[0].className = 'top_box'
@@ -135,90 +115,80 @@ var giftDetails = {
                 }
 
 
-                //thisDocumentHeight 2059
-
-
-                /* Math.abs(parseFloat(thisDocumentHeight) - parseFloat(thisScrollTop + thisWindowHeight));*/
-
-
-
             }
 
-
-
-
-        },false)
     },
 
 
+    //滑动到达指定位置方法
+    scrollMove: function (scrollTo, time) {
 
-//滑动到达指定位置方法
-scrollMove:function(scrollTo, time) {
+        //var scrollFrom = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
-    var scrollFrom = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        var scrollFrom = document.getElementsByClassName('description_box_cover')[0].pageYOffset || document.getElementsByClassName('description_box_cover')[0].scrollTop;
 
-    var count = 0;
+        var count = 0;
 
-    var every = 10;
+        var every = 10;
 
-    //到元素的距离
-    scrollTo = parseInt(scrollTo);
+        //到元素的距离
+        scrollTo = parseInt(scrollTo);
 
-    time /= every;
+        time /= every;
 
-    var interval = setInterval(function () {
+        var interval = setInterval(function () {
 
-        count++;
+            count++;
 
-        document.documentElement.scrollTop = document.body.scrollTop = (scrollTo - scrollFrom) / time * count + scrollFrom;
+            document.getElementsByClassName('description_box_cover')[0].scrollTop = document.getElementsByClassName('description_box_cover')[0].scrollTop = (scrollTo - scrollFrom) / time * count + scrollFrom;
 
-        if (count >= time) {
+            if (count >= time) {
 
-            clearInterval(interval);
-
-        }
-    }, every);
-
-},
-
-//安卓吸附导航方法
-slidePositionTab:function() {
-
-
-    if (!browser.os.iOS) {  //判断机型
-
-
-        var thisNavTab = document.getElementsByClassName('details_nav_content')[0];
-
-        var thisNavTabEmpty = document.getElementsByClassName('details_nav_box')[0];
-
-        slideScrcoll();
-
-        function slideScrcoll() {
-
-
-            if (thisNavTab.getBoundingClientRect().top <= 0) { //元素到页面顶端的位置
-
-                thisNavTab.className +=' fixed_nav'
+                clearInterval(interval);
 
             }
+        }, every);
 
-            else {
+    },
 
-                thisNavTab.className = 'details_nav_content'
+    //安卓吸附导航方法
+    slidePositionTab: function () {
 
+
+        if (!browser.os.iOS) {  //判断机型
+
+
+            var thisNavTab = document.getElementsByClassName('details_nav_content')[0];
+
+            var thisNavTabEmpty = document.getElementsByClassName('details_nav_box')[0];
+
+            slideScrcoll();
+
+            function slideScrcoll() {
+
+
+                if (thisNavTabEmpty.getBoundingClientRect().top <= 0) { //元素到页面顶端的位置
+
+                    thisNavTab.className += ' fixed_nav';
+
+                    if(thisNavTab.className.indexOf('fixed_nav')){
+
+                        thisNavTab.className = 'details_nav_content fixed_nav';
+                    }
+
+                }
+
+                else {
+
+                    thisNavTab.className = 'details_nav_content'
+
+                }
             }
+
+
         }
 
-
-    }
-
-},
+    },
 
 
-
-
-
-
-
-}
+};
