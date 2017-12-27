@@ -25,6 +25,34 @@ var homePagePrompt = {
 
              }
 
+           //点击背景收回
+           thisTab.getElementsByClassName('jf_drop_down_bg')[0].addEventListener('click',function () {
+
+            homePagePrompt.DropDownHide(thisTab)
+
+            },false);
+
+
+           if(thisTab.getElementsByClassName('jf_drop_down_bg')[0]){
+
+
+               if(browser.os.android){
+
+
+                   thisTab.getElementsByClassName('jf_drop_down_bg')[0].addEventListener('touchmove',windowBanEvent.Canceling,false);
+
+
+               }
+               else {
+
+                   homePagePrompt.addEvent(thisTab.getElementsByClassName('jf_drop_down_bg')[0]);
+               }
+
+
+
+
+           }
+
             //如果弹框有show
             if(thisTab.className.indexOf('show')>-1){
 
@@ -64,8 +92,6 @@ var homePagePrompt = {
 
              )
 
-
-
             }
 
 
@@ -75,6 +101,8 @@ var homePagePrompt = {
                 var evt = e || window.event;
 
                 var thisTargetEle = evt.srcElement || evt.target;
+
+                console.log(thisTargetEle);
 
                 if (document.getElementsByClassName('sort_list')[0].getElementsByClassName('selected')[0]) {
 
@@ -129,6 +157,33 @@ var homePagePrompt = {
 
         }
 
+
+        thisTab.getElementsByClassName('jf_drop_down_bg')[0].addEventListener('click',function () {
+
+            homePagePrompt.DropDownHide(thisTab)
+
+        },false);
+
+
+        if(thisTab.getElementsByClassName('jf_drop_down_bg')[0]){
+
+
+            if(browser.os.android){
+
+
+                thisTab.getElementsByClassName('jf_drop_down_bg')[0].addEventListener('touchmove',windowBanEvent.Canceling,false);
+
+
+            }
+            else {
+
+                homePagePrompt.addEvent(thisTab.getElementsByClassName('jf_drop_down_bg')[0]);
+            }
+
+
+
+
+        }
 
 
             if(thisTab.className.indexOf('show')>-1){
@@ -362,9 +417,30 @@ var homePagePrompt = {
     }
 
 
+},
+
+
+    addEvent:function (ele) {
+
+    var allEvent=['touchstart','touchmove','touchend'];
+
+    for(var i=0;i<allEvent.length;i++) {
+
+        ele.addEventListener(allEvent[i],homePagePrompt.eventBan,false)
+
+    }
+
+},
+
+
+    eventBan:function (e) {
+
+    // window.event? window.event.cancelBubble = true : e.stopPropagation();
+
+     window.event ? window.event.returnValue = false : e.preventDefault();
+
+
 }
-
-
 
 
 };
