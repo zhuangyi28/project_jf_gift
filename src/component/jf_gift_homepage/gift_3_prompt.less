@@ -15,7 +15,10 @@
 
     .sort_list,.details_list{
       overflow-y: scroll;
-      max-height: calc(38vh);
+      max-height: calc(36vh);
+      @media screen and (max-width:374px){
+        max-height: calc(45vh);
+      }
       div{
         position: relative;
         padding: 15px 25px;

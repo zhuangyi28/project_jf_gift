@@ -43,6 +43,12 @@
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    @media screen and (max-width: 374px){
+
+      line-height: 25px;
+      font-size: 10px;
+
+    }
 
     img {
       width: 15px;
@@ -153,6 +159,9 @@
     }
 
     .jf_gift_question{
+      height: 40px;
+      display: flex;
+      align-items: center;
       img{
         vertical-align: middle;
         width: 18px;
@@ -213,5 +222,94 @@
   }
 
 
+}
+/*动画*/
+.gift_lack_page_my{
+
+  background: #f5f5f9;
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+
+  .gift_lack_my{
+
+
+    height: 200px;
+    width: 280px;
+    overflow: hidden;
+    background: url("../../images/gift_blank_page.png") no-repeat;
+    background-position:-13% 80%;
+    background-size: 310%;
+    padding-top: 20% ;
+    @media screen and (max-width:320px){
+      background-position:-9% 80%;
+    }
+
+
+  }
+
+  .gift_lack_my_1{
+
+    position: absolute;
+    text-align: center;
+    width: 240px;
+    height: 200px;
+    top:20%;
+    left:calc(~'(100% - 310px) / 2');
+    overflow: hidden;
+    background: url("../../images/gift_blank_page.png") no-repeat;
+    background-position: 17% 16% ;
+    background-size: 360%;
+    transform: translateY(0px);
+    animation: second 2s infinite;
+    animation-delay: .4s;
+    @keyframes second {
+      from {
+
+        opacity: 0;
+      }
+      to {
+
+        opacity: 1;
+      }
+    }
+  }
+
+  .gift_lack_my_2{
+
+    position: absolute;
+    text-align: center;
+    width: 240px;
+    height: 190px;
+    top:20%;
+    left:calc(~'(100% - 310px) / 2');
+    overflow: hidden;
+    background: url("../../images/gift_blank_page.png") no-repeat;
+    background-position:73% 22%;
+    background-size:360%;
+    transform: translateY(0px);
+    animation: second 2s infinite;
+    animation-delay: .2s;
+    @keyframes second {
+      from {
+
+        opacity: 0;
+      }
+      to {
+
+        opacity: 1;
+      }
+    }
+
+  }
+
+  .gift_lack_my_text{
+    color: #0da8e3;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+
+  }
 }
 

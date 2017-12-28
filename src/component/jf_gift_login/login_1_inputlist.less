@@ -6,9 +6,17 @@
   position: absolute;
   top: 0;
   overflow: hidden;
+  .login_banner{
+    margin-top: 20px;
+    height: 215px;
+    height: calc(~'100vw / 750 * 430');
+    background: url("../images/logi_banner.png");
+    background-size: 100%;
+    width: 100%;
+  }
 }
 .jf_gift_register .login_content{
-  margin: 160px auto;
+  margin: 20px auto;
   text-align: center;
   position: relative;
   z-index: 5;
@@ -18,7 +26,7 @@
 .jf_gift_register .login_content>label{
   display: block;
   width:100%;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
   position: relative;
 
 }
@@ -100,10 +108,8 @@
   color: #10a6e1;
   z-index: 10;
   .gif_input_code{
-
     font-size: 14px;
-    padding-top: 3px;
-
+    line-height: 28px;
   }
 
 }
@@ -129,8 +135,7 @@
 
 /*去兑换按钮*/
 .jf_gift_register .login_content .login_btn{
-  margin-bottom: 50px;
-  margin-top: 50px;
+  margin: 40px auto;
 }
 .jf_gift_register .login_content .login_btn:active{
 opacity: .8;
@@ -140,8 +145,6 @@ opacity: .8;
   width: 90%;
   text-align: left;
   margin-left: 15px;
-  /*margin: 0 auto;
-  position: relative;*/
   .jf_kindly_reminder{
     padding-top: 25px;
   }
@@ -169,4 +172,25 @@ opacity: .8;
   border: none;
   outline: 0;
   -webkit-tap-highlight-color:transparent;
+}
+
+@media screen and (max-width:374px){
+
+  .jf_gift_register{
+
+    .login_banner{
+      margin: 10px auto;
+    }
+    .login_content{
+      label{
+        margin-bottom: 15px;
+      }
+      .login_btn{
+        margin: 20px auto;
+      }
+    }
+  }
+
+
+
 }

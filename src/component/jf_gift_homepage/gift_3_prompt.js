@@ -440,6 +440,89 @@ var homePagePrompt = {
      window.event ? window.event.returnValue = false : e.preventDefault();
 
 
+},
+
+    showSharePrompt:function (thisPromptEle) {
+
+    var thisEle = thisPromptEle;
+
+    var thisCloseEle = document.getElementsByClassName('share_close')[0]
+
+    if(thisEle.getElementsByClassName('show_prompt')[0]){
+
+        shareHide(thisEle)
+
+    }
+    else {
+
+        shareShow(thisEle)
+
+
+    }
+
+    thisCloseEle.addEventListener('click',function () {
+
+        shareHide(thisEle)
+    })
+
+
+
+    function shareShow(thisEle) {
+
+        thisEle.style.display = 'block';
+
+        setTimeout(function () {
+
+            if (thisEle.className.indexOf('show_prompt') == -1) {
+
+                thisEle.className += ' show_prompt'
+
+            }
+
+        }, 10);
+
+
+        document.getElementsByClassName('share_bg')[0].addEventListener('touchmove',windowBanEvent.Canceling);//给阴影绑定禁止事件
+
+    }
+
+    function shareHide(thisEle) {
+
+        if (thisEle.className.indexOf('show_prompt') > -1) {
+
+            transitionMove(thisEle);
+
+            thisEle.className = thisEle.className.replace(' show_prompt', '')
+
+        }
+
+        windowBanEvent.unbundling();//解绑页面禁止事件
+
+        function transitionMove(ele) {
+
+            // Safari 3.1 到 6.0 代码
+            ele.addEventListener("webkitTransitionEnd", MFunction);
+            // 标准语法
+            ele.addEventListener("transitionend", MFunction);
+
+            function MFunction() {
+
+                ele.style.display = 'none';
+                // Safari 3.1 到 6.0 代码
+                ele.removeEventListener("webkitTransitionEnd", MFunction);
+                // 标准语法
+                ele.removeEventListener("transitionend", MFunction);
+
+
+            }
+
+
+        }
+
+
+    }
+
+
 }
 
 
