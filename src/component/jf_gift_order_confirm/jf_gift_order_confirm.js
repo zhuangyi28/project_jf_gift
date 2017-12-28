@@ -15,7 +15,7 @@ var orderConfirm = {
 
                 thisEle.getElementsByTagName('span')[0].innerHTML = '显示细分商品';
 
-                thisEle.getElementsByTagName('img')[0].style.transform = ''
+                thisEle.getElementsByTagName('img')[0].style.transform = 'rotate(0deg)'
 
             }
 
@@ -25,7 +25,7 @@ var orderConfirm = {
 
                 thisEle.getElementsByTagName('span')[0].innerHTML = '点击收起';
 
-                thisEle.getElementsByTagName('img')[0].style.transform = 'rotate(0deg)'
+                thisEle.getElementsByTagName('img')[0].style.transform = ''
 
             }
 
