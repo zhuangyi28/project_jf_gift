@@ -247,7 +247,7 @@ var homePagePrompt = {
                 );
 
                 //获取点击的innerHtml
-                document.getElementsByClassName('nav_details')[0].getElementsByTagName('i')[0].innerHTML = thisTargetEle.innerHTML;
+                //document.getElementsByClassName('nav_details')[0].getElementsByTagName('i')[0].innerHTML = thisTargetEle.innerHTML;
 
 
             }
