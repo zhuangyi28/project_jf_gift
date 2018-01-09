@@ -486,8 +486,14 @@ var productInfoPlay={
 
         _this.moveDistanceY=0;//y方向移動的距離
 
-        //当前页面Banner部分绑定事件
-        _this.initPointEle(_this.moveEleParent);//初始化点点（参数一当前移动元素的父元素）
+
+        setTimeout(function () {
+
+            //当前页面Banner部分绑定事件
+            _this.initPointEle(_this.moveEleParent);//初始化点点（参数一当前移动元素的父元素）
+
+        },500);
+
 
 
         _this.moveEvent();//元素绑定事件（参数一当前移动元素）
@@ -803,37 +809,38 @@ var productInfoPlay={
     initPointEle:function(pointParentEle){//参数是点点以及banner的父元素,以及点点父元素的class值
 
 
-
         var _this = this;
 
         var AllBannerImg=document.getElementsByClassName( _this.moveEle)[0].getElementsByClassName(_this.scaleEleParent);//显示的banner图片
 
+        //console.log(AllBannerImg);
+
         var pointEle="";//点点元素
 
-        for(var i=0;i<AllBannerImg.length;i++){
+            for(var i=0;i<AllBannerImg.length;i++){
 
 
-            if (i == 0) {
+                if (i == 0) {
+
+                    pointEle += '<span class="showpoint"></span>';
+
+                }
+
+                else {
 
 
-                pointEle += '<span class="showpoint"></span>';
+                    pointEle += '<span></span>';
+
+                }
 
             }
 
-            else {
 
-
-                pointEle += '<span></span>';
-
-            }
-
-        }
 
         addnode("div",pointEle,'allpoint');
 
 
         function addnode(tag, innerHtml, className){
-
 
             var obj = document.createElement(tag);
 

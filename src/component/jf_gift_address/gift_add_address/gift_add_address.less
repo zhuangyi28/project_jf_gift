@@ -24,6 +24,7 @@
     color: #8a8a8a;
   }
   p + p {
+    width: 245px;
     width: calc(~'100% - 100px');
     justify-content: space-between;
     img{
@@ -77,8 +78,9 @@
     transform-origin: 0 0;
     transform: scaleY(.6);
   }
-  &:last-of-type:after{
+  &:nth-of-type(4):after{
     content: '';
+    height: 0;
     border-bottom: none;
   }
 }
