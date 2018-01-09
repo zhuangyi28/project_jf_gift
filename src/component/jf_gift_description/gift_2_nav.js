@@ -3,8 +3,6 @@
  */
 var giftDetails = {
 
-
-
     //点击tab滚动条滑动到指定位置
     changeTab: function (thisTab, e) {
 
@@ -118,7 +116,6 @@ var giftDetails = {
             }
 
     },
-
 
     //滑动到达指定位置方法
     scrollMove: function (scrollTo, time) {

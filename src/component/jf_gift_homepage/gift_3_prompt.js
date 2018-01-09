@@ -102,7 +102,7 @@ var homePagePrompt = {
 
                 var thisTargetEle = evt.srcElement || evt.target;
 
-                console.log(thisTargetEle);
+                //console.log(thisTargetEle);
 
                 if (document.getElementsByClassName('sort_list')[0].getElementsByClassName('selected')[0]) {
 

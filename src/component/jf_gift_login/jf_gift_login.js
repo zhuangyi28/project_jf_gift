@@ -5,7 +5,6 @@
 
 var countDown = {
 
-
     InterValObj: 0,
 
     nums: 60,//设置秒
