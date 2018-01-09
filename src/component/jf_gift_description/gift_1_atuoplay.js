@@ -480,8 +480,6 @@ var productInfoPlay={
 
         _this.fn=details.fn||0;
 
-
-
         _this.thisPosition = 0;//初始化现在在第几个页面
 
         _this.moveDistanceX = 0;//x方向移动的距离(一根手指)
@@ -490,6 +488,7 @@ var productInfoPlay={
 
         //当前页面Banner部分绑定事件
         _this.initPointEle(_this.moveEleParent);//初始化点点（参数一当前移动元素的父元素）
+
 
         _this.moveEvent();//元素绑定事件（参数一当前移动元素）
 
@@ -802,6 +801,9 @@ var productInfoPlay={
 
     /*添加元素*/
     initPointEle:function(pointParentEle){//参数是点点以及banner的父元素,以及点点父元素的class值
+
+
+
         var _this = this;
 
         var AllBannerImg=document.getElementsByClassName( _this.moveEle)[0].getElementsByClassName(_this.scaleEleParent);//显示的banner图片
@@ -813,10 +815,13 @@ var productInfoPlay={
 
             if (i == 0) {
 
+
                 pointEle += '<span class="showpoint"></span>';
+
             }
 
             else {
+
 
                 pointEle += '<span></span>';
 
@@ -826,11 +831,13 @@ var productInfoPlay={
 
         addnode("div",pointEle,'allpoint');
 
+
         function addnode(tag, innerHtml, className){
+
 
             var obj = document.createElement(tag);
 
-            if (className) {
+               if (className) {
 
                 obj.className = className
             }
@@ -838,6 +845,7 @@ var productInfoPlay={
             obj.innerHTML = innerHtml;
 
             document.getElementsByClassName(pointParentEle)[0].appendChild(obj);
+
         }
 
     },
@@ -888,9 +896,11 @@ var productInfoPlay={
             document.getElementsByClassName( _this.allShowEle)[0].style.display='block';//弹出元素显示
 
             document.getElementsByTagName("body")[0].style.height=""+thisWindowHeight+"px";
+
             document.getElementsByTagName("html")[0].style.height=""+thisWindowHeight+"px";
 
             document.getElementsByTagName("body")[0].style.overflow="hidden";//页面禁止滚动
+
             document.getElementsByTagName("html")[0].style.overflow="hidden";//页面禁止滚动
 
         };
